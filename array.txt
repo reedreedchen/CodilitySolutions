@@ -1,0 +1,39 @@
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+// you can write to stdout for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 6.0 with .NET 4.5 (Mono)
+    
+        int resultN = 999;
+        
+        bool[] filters= new bool[A.Length];
+        
+        for(int i = 0; i < A.Length; i++)
+        {
+            filters[i]= true;
+            for(int j = 0; j < A.Length; j++)
+            {
+                if(i!=j && A[i] == A[j]) 
+                {
+                    filters[i]= false;
+                }
+            }
+        }
+        
+        for(int i = 0; i < A.Length; i++)
+        {
+            if(filters[i] ==true)
+            {
+                resultN = A[i];
+
+            }
+        }
+    
+        return resultN;
+    
+    }
+}
